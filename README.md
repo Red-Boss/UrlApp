@@ -1,7 +1,10 @@
-#URL Checker#
+URL Checker
+
+
+
 URL Checker is a simple Django web application that allows users to check the availability of URLs and store records of these URLs. The application provides a user-friendly interface to manage and monitor URLs.
 
-#Features#
+Features
 Check the availability of URLs and store records with the status.
 Display a list of checked URLs with their statuses.
 Add new URLs for checking.
@@ -11,7 +14,7 @@ View statistics on the number of available and unavailable URLs.
 User-friendly interface with validation for input URLs.
 Prerequisites
 Python (3.x)
-Django (4.2)
+Django (3.x)
 Installation
 Clone the repository:
 bash
@@ -41,4 +44,3 @@ Contributions are welcome! If you find any issues or have suggestions for improv
 
 License
 This project is licensed under the MIT License - see the LICENSE file for details.
-
