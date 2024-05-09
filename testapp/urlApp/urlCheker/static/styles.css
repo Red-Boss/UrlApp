@@ -1,0 +1,80 @@
+/* styles.css */
+
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Стили для списка URL */
+.url-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.url-list li {
+    background-color: #fff;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.url-list li:hover {
+    background-color: #f0f0f0;
+}
+
+.url-list li .url {
+    font-weight: bold;
+    color: #333;
+}
+
+.url-list li .status-success {
+    color: #28a745;
+}
+
+.url-list li .status-failed {
+    color: #dc3545;
+}
+
+/* Стили для формы */
+.form-container {
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+    margin-top: 0;
+}
+
+.form-container input[type="text"],
+.form-container button {
+    margin-bottom: 10px;
+    padding: 10px;
+    width: calc(100% - 20px);
+    border: 1px solid #ced4da;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.form-container button {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-container button:hover {
+    background-color: #0056b3;
+}

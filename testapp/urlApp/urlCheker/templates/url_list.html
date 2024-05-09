@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Checker</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>URL Checker</h1>
+    </header>
+    <main class="container">
+        <div class="form-container">
+            <h2>Добавить URL</h2>
+            <form method="post">
+                {% csrf_token %}
+                <input type="text" name="url" placeholder="Введите URL">
+                <button type="submit">Добавить URL</button>
+            </form>
+        </div>
+        <h2>Список URL</h2>
+        <ul class="url-list">
+            {% for url in urls %}
+            <li>
+                <span class="url">{{ url.url }}</span>
+                <span class="date">{{ url.date_added }}</span>
+                <span class="status {% if url.status %}status-success{% else %}status-failed{% endif %}">
+                {% if url.status %} Доступен {% else %} Недоступен {% endif %}
+                </span>
+
+                <a href="{% url 'check_url' url.id %}" class="check-url">Проверить</a>
+                <a href="{% url 'delete_url' url.id %}">Удалить</a>
+            </li>
+            {% endfor %}
+        </ul>
+        <form method="post" action="{% url 'check_all_urls' %}">
+            {% csrf_token %}
+            <button type="submit">Проверить все</button>
+        </form>
+        <form action="{% url 'statistics' %}">
+        <button type="submit">Статистика URL</button>
+    </form>
+    </main>
+</body>
+</html>
